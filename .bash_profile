@@ -4,11 +4,12 @@ alias ll='ls -al'
 
 # environment variables
 export CLICOLOR=1
-export PATH=${PATH}:
 # ls order by name
 export LC_COLLATE=C
 # silence macos default zsh
 export BASH_SILENCE_DEPRECATION_WARNING=1
+
+export PATH=${PATH}:${HOME}/Library/flutter/bin:/usr/local/bin
 
 txtblk='\[\e[0;30m\]' # Black - Regular
 txtred='\[\e[0;31m\]' # Red

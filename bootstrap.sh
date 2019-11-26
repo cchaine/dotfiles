@@ -34,3 +34,5 @@ linkDotFile .bash_profile
 source ~/.bash_profile
 
 linkDotFile .hushlogin
+
+linkDotFile .tmux.conf

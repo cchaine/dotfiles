@@ -54,7 +54,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 so ~/.vim/plugins.vim
-colorscheme palenight
-let g:lightline = { 'colorscheme' : 'palenight' }
+colorscheme gruvbox
+let g:lightline = { 'colorscheme' : 'gruvbox' }
 
 let NERDTreeShowHidden = 1

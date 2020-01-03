@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 
 dotfilesDir=$(pwd)
+backup="${dotfilesDir}/backup"
 
 function linkDotFile {
-  dest="${HOME}/${1}"
-  dateStr=$(date +%Y-%m-%d-%H%M)
-  backup="dotfileBackup${dateStr}/"
+  if [ -z "${2}" ]; then
+    dest="${HOME}/${1}"
+  else
+    dest="${HOME}/${2}"
+  fi
+  
+  mkdir -p ${backup}    
   
   if [ -h ~/${1} ]; then
     # Existing symlink
@@ -13,26 +18,72 @@ function linkDotFile {
     rm ${dest}
 
   elif [ -f "${dest}" ]; then
-    # Existing file
+    # Exiting file
     echo "Backing up existing file: ${dest}"
-    mv ${dest}{,.${dateStr}}
+    mv ${dest} ${backup}/${1}
 
   elif [ -d "${dest}" ]; then
     # Existing dir
     echo "Backing up existing dir: ${dest}"
-    mv ${dest}{,.${dateStr}}
+    mv ${dest} ${backup}/${1}
   fi
 
   echo "Creating new symlink: ${dest}"
   ln -s ${dotfilesDir}/${1} ${dest}
 }
 
-linkDotFile .vim
-linkDotFile .vimrc
+function unlinkDotFile {
+  if [ -h ${HOME}/${1} ]; then
+    rm ${HOME}/${1}
+    echo "Removing ${HOME}/${1}"
+  fi
 
-linkDotFile .bash_profile
-source ~/.bash_profile
+  if [ -f "${backup}/${1}" ];then 
+    mv ${backup}/${1} ${HOME}/${1}
+    echo "Restoring ${1}"
+  elif [ -d "${backup}/${1}" ]; then
+    mv ${backup}/${1} ${HOME}/${1}
+    echo "Restoring ${1}"
+  fi
+}
 
-linkDotFile .hushlogin
+function printUsage {
+  echo "Usage: $0 [set|reset]"
+}
 
-linkDotFile .tmux.conf
+if [ $# -ne 2 ]; then
+  if [ "$1" == "set" ]; then
+    linkDotFile .vim
+    linkDotFile .vimrc
+
+    if [ "$OSTYPE" == "darwin" ]; then
+      linkDotFile .bash_profile
+      source ~/.bash_profile
+    else
+      linkDotFile .bash_profile .bashrc
+      source ~/.bashrc
+    fi 
+
+    linkDotFile .hushlogin
+    
+    linkDotFile .tmux.conf
+  elif [ "$1" == "reset" ]; then
+    unlinkDotFile .vim
+    unlinkDotFile .vimrc
+
+    if [ "$OSTYPE" == "darwin" ]; then 
+      unlinkDotFile .bash_profile
+    else
+      unlinkDotFile .bashrc
+    fi
+
+    unlinkDotFile .hushlogin
+    
+    unlinkDotFile .tmux.conf
+  else
+    printUsage
+  fi
+else
+  printUsage
+fi
+

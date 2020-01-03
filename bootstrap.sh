@@ -75,6 +75,11 @@ if [ $# -ne 2 ]; then
       unlinkDotFile .bash_profile
     else
       unlinkDotFile .bashrc
+      if [ -f ${HOME}/.bashrc ]; then
+        source ${HOME}/.bashrc
+      else
+        source /etc/skel/.bashrc
+      fi
     fi
 
     unlinkDotFile .hushlogin

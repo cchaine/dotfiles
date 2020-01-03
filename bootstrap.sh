@@ -75,16 +75,19 @@ if [ $# -ne 2 ]; then
       unlinkDotFile .bash_profile
     else
       unlinkDotFile .bashrc
-      if [ -f ${HOME}/.bashrc ]; then
-        source ${HOME}/.bashrc
-      else
-        source /etc/skel/.bashrc
-      fi
     fi
 
     unlinkDotFile .hushlogin
     
     unlinkDotFile .tmux.conf
+
+    printf "\n\n"
+    echo "Run the following command to reset the terminal :"
+    if [ -f ${HOME}/.bashrc ]; then
+      printf "\n\tsource ${HOME}/.bashrc\n\n"
+    else
+      printf "\n\tsource /etc/skel/.bashrc\n\n"
+    fi
   else
     printUsage
   fi

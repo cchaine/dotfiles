@@ -46,15 +46,23 @@ bakcyn='\[\e[46m\]'   # Cyan
 bakwht='\[\e[47m\]'   # White
 txtrst='\[\e[0m\]'    # Text Reset
 
-# Prompt colours
-nameC="${txtpur}"
-hostC="${txtpur}"
-pathC="${txtylw}"
+PROMPT_COMMAND=__prompt_command
 
+nameColor="${txtgrn}"
 # Red name for root
 if [ "${UID}" -eq "0" ]; then
-  nameC="${txtred}"
+  nameColor="${txtred}"
 fi
+pathColor="${txtwht}"
 
-export PS1="${nameC}\u@${hostC}\h ${pathC}\w${txtrst} $ "
+__prompt_command() {
+  local exit="$?"
+  PS1=""
 
+  if [ $exit != 0 ]; then
+    PS1+="${txtred}${exit} "
+  fi
+
+
+  PS1+="${nameColor}\u${pathColor}:\$PWD${txtrst}> "
+}

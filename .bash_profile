@@ -1,16 +1,21 @@
+############################
 # aliases
+############################
+
 alias grep='grep --color=auto'
 alias ll='ls -al'
 
+############################
+# environment variables 
+############################
 
-# environment variables
 export CLICOLOR=1
 # ls order by name
 export LC_COLLATE=C
 # silence macos default zsh
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-export PATH=${PATH}:${HOME}/Library/flutter/bin:/usr/local/bin
+export PATH=${PATH}:${HOME}/Library/flutter/bin:/usr/local/bin:${HOME}/Library/node-v8.17.0-darwin-x64/bin
 
 txtblk='\[\e[0;30m\]' # Black - Regular
 txtred='\[\e[0;31m\]' # Red
@@ -48,7 +53,7 @@ txtrst='\[\e[0m\]'    # Text Reset
 
 PROMPT_COMMAND=__prompt_command
 
-nameColor="${txtgrn}"
+nameColor="${txtpur}"
 # Red name for root
 if [ "${UID}" -eq "0" ]; then
   nameColor="${txtred}"
@@ -66,3 +71,18 @@ __prompt_command() {
 
   PS1+="${nameColor}\u${pathColor}:\$PWD${txtrst}> "
 }
+
+############################
+# git completion 
+############################
+
+if [ ! -f ~/.git-completion.bash ]; then
+  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+  if [ $? -ne 0 ]; then
+    echo "Error downloading .git-completion.bash"
+  fi
+fi
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi

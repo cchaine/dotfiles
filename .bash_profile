@@ -3,7 +3,7 @@
 ############################
 
 alias grep='grep --color=auto'
-alias ll='ls -al'
+alias ll='ls -al --color'
 
 ############################
 # environment variables 

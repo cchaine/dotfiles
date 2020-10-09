@@ -3,7 +3,12 @@
 ############################
 
 alias grep='grep --color=auto'
-alias ll='ls -al --color'
+
+# Enable colors in ls on linux
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  alias ls:'ls --color'
+fi
+alias ll='ls -al'
 
 ############################
 # environment variables 
@@ -15,7 +20,6 @@ export LC_COLLATE=C
 # silence macos default zsh
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-export PATH=${PATH}:${HOME}/Library/flutter/bin:/usr/local/bin:${HOME}/Library/node-v8.17.0-darwin-x64/bin
 
 txtblk='\[\e[0;30m\]' # Black - Regular
 txtred='\[\e[0;31m\]' # Red

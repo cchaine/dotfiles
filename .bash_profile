@@ -6,7 +6,7 @@ alias grep='grep --color=auto'
 
 # Enable colors in ls on linux
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  alias ls:'ls --color'
+  alias ls='ls --color'
 fi
 alias ll='ls -al'
 

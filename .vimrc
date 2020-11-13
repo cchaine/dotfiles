@@ -13,6 +13,9 @@ nnoremap <Right> l
 nnoremap <Up> k
 nnoremap <Down> j
 
+" Automatically reload files modified outside vim
+set autoread
+
 " Appearance "
 syntax enable
 
@@ -54,7 +57,10 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 so ~/.vim/plugins.vim
-colorscheme gruvbox
-let g:lightline = { 'colorscheme' : 'gruvbox' }
+colorscheme jellybeans 
+let g:lightline = { 'colorscheme' : 'jellybeans' }
 
+" NERDTree configuration
 let NERDTreeShowHidden = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1

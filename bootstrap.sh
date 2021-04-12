@@ -67,6 +67,8 @@ if [ $# -ne 2 ]; then
     linkDotFile .hushlogin
     
     linkDotFile .tmux.conf
+
+    linkDotFile .env
   elif [ "$1" == "reset" ]; then
     unlinkDotFile .vim
     unlinkDotFile .vimrc
@@ -88,6 +90,8 @@ if [ $# -ne 2 ]; then
     else
       printf "\n\tsource /etc/skel/.bashrc\n\n"
     fi
+
+    unlinkDotFile .env
   else
     printUsage
   fi

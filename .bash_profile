@@ -20,6 +20,8 @@ export LC_COLLATE=C
 # silence macos default zsh
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+# load environment variables
+source .env
 
 txtblk='\[\e[0;30m\]' # Black - Regular
 txtred='\[\e[0;31m\]' # Red

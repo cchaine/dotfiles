@@ -64,11 +64,11 @@ if [ $# -ne 2 ]; then
       source ~/.bashrc
     fi 
 
-    linkDotFile .hushlogin
-    
     linkDotFile .tmux.conf
 
     linkDotFile .env
+
+    linkDotFile .config
   elif [ "$1" == "reset" ]; then
     unlinkDotFile .vim
     unlinkDotFile .vimrc
@@ -79,8 +79,6 @@ if [ $# -ne 2 ]; then
       unlinkDotFile .bashrc
     fi
 
-    unlinkDotFile .hushlogin
-    
     unlinkDotFile .tmux.conf
 
     printf "\n\n"
@@ -92,6 +90,8 @@ if [ $# -ne 2 ]; then
     fi
 
     unlinkDotFile .env
+
+    unlinkDotFile .config
   else
     printUsage
   fi

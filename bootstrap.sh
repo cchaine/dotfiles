@@ -69,6 +69,8 @@ if [ $# -ne 2 ]; then
     linkDotFile .env
 
     linkDotFile .config
+
+    linkDotFile .Xresources
   elif [ "$1" == "reset" ]; then
     unlinkDotFile .vim
     unlinkDotFile .vimrc
@@ -92,6 +94,8 @@ if [ $# -ne 2 ]; then
     unlinkDotFile .env
 
     unlinkDotFile .config
+
+    unlinkDotFile .Xresources
   else
     printUsage
   fi

@@ -1,0 +1,27 @@
+general {
+  output_format = "i3bar"
+  colors = false
+  markup = pango
+  interval = 5
+  color_good = '#151515'
+  color_degraded = '#ebcb8b'
+  color_bad = '#ba5e57'
+}
+
+order += "load"
+order += "ethernet enp0s3"
+order += "tztime local"
+
+load {
+  format = "<span background='#f59335'> &#xf0e7; </span><span background='#e5e9f0'> %5min Load </span>"
+}
+
+ethernet enp0s3 {
+  format_up = "<span background='#a1d569'> &#xf6ff; </span><span background='#e5e9f0'> %ip </span>"
+  format_down = "<span background='#a1d569'> &#xf6ff; </span><span background='#e5e9f0'> Disconnected </span>"
+}
+
+tztime local {
+  format = "<span background='#8be9fd'> &#xf017; </span><span background='#e5e9f0'> %time </span>"
+  format_time = "%a %-d %b %H:%M"
+}

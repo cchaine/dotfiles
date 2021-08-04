@@ -36,16 +36,20 @@ for_window [class=".*"] border pixel 4
 ###################################################
 #                    Startup                      #
 ###################################################
+
 # i3lock
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager
 exec --no-startup-id nm-applet
 
 # run virtualbox tools
-exec "VBoxClient --vmsvga"
+exec --no-startup-id "VBoxClient --vmsvga"
 
 # set keyboard layout
-exec "setxkbmap fr mac"
+exec --no-startup-id "setxkbmap fr mac"
+
+# run wallpaper script
+exec_always --no-startup-id ~/.config/scripts/update-wallpaper
 
 ###################################################
 #                    Shortcuts                    #

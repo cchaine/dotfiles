@@ -8,15 +8,20 @@ general {
   color_bad = '#ba5e57'
 }
 
+order += "disk /"
 order += "load"
-order += "ethernet enp0s3"
+order += "ethernet enp0s25"
 order += "tztime local"
+
+disk "/" {
+  format = "<span background='#f1fa8c'> &#xf0a0; </span><span background='#e5e9f0'> %free Free </span>"
+}
 
 load {
   format = "<span background='#f59335'> &#xf0e7; </span><span background='#e5e9f0'> %5min Load </span>"
 }
 
-ethernet enp0s3 {
+ethernet enp0s25 {
   format_up = "<span background='#a1d569'> &#xf6ff; </span><span background='#e5e9f0'> %ip </span>"
   format_down = "<span background='#a1d569'> &#xf6ff; </span><span background='#e5e9f0'> Disconnected </span>"
 }

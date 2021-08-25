@@ -6,7 +6,8 @@ font pango:Ubuntu Mono
 
 # panel
 bar {
-    font pango:Ubuntu Mono, FontAwesome 15
+    position top
+    font pango:Ubuntu Mono, FontAwesome 12
     colors {
         background #151515
         statusline #151515
@@ -46,7 +47,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id "VBoxClient --vmsvga"
 
 # set keyboard layout
-exec --no-startup-id "setxkbmap fr mac"
+exec --no-startup-id "setxkbmap fr"
 
 # run wallpaper script
 exec_always --no-startup-id ~/.config/scripts/update-wallpaper
@@ -136,4 +137,5 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
+# lock
+bindsym Ctrl+Mod1+l exec i3lock -c 000000

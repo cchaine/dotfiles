@@ -10,8 +10,7 @@ bar {
     font pango:Ubuntu Mono, FontAwesome 12
     colors {
         background #151515
-        statusline #151515
-        separator #151515
+        separator #d8dee8
 
         # colour of border, background, and text
         focused_workspace       #e5e9f0 #e5e9f0 #151515

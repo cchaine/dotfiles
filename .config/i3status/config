@@ -3,30 +3,22 @@ general {
   colors = false
   markup = pango
   interval = 5
-  color_good = '#151515'
-  color_degraded = '#ebcb8b'
-  color_bad = '#ba5e57'
 }
 
 order += "disk /"
-order += "load"
 order += "ethernet enp0s25"
 order += "tztime local"
 
 disk "/" {
-  format = "<span background='#f1fa8c'> &#xf0a0; </span><span background='#e5e9f0'> %free Free </span>"
-}
-
-load {
-  format = "<span background='#f59335'> &#xf0e7; </span><span background='#e5e9f0'> %5min Load </span>"
+  format = " <span weight='bold'>Disk</span>: %free Free "
 }
 
 ethernet enp0s25 {
-  format_up = "<span background='#a1d569'> &#xf6ff; </span><span background='#e5e9f0'> %ip </span>"
-  format_down = "<span background='#a1d569'> &#xf6ff; </span><span background='#e5e9f0'> Disconnected </span>"
+  format_up = " <span weight='bold'>enp0s25</span>: %ip "
+  format_down = " <span weight='bold'>enp0s25</span>: disconnected "
 }
 
 tztime local {
-  format = "<span background='#8be9fd'> &#xf017; </span><span background='#e5e9f0'> %time </span>"
-  format_time = "%a %-d %b %H:%M"
+  format = " %time "
+  format_time = "%a %-d %b %H:%M "
 }

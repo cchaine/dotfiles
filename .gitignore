@@ -1,4 +1,4 @@
-.vim/plugged
-.vim/autoload
-.vim/.netrwhist
+config/vim/.vim/plugged
+config/vim/.vim/autoload
+config/vim/.vim/.netrwhist
 backup

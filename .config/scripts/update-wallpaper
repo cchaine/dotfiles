@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-# Download wallpaper
-wget --output-document /tmp/wallpaper https://source.unsplash.com/random?orientation=lanscape?collection=220381,404339 2> /dev/null
-
-feh --bg-fill "/tmp/wallpaper"

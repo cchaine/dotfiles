@@ -1,4 +1,2 @@
-config/vim/.vim/plugged
-config/vim/.vim/autoload
-config/vim/.vim/.netrwhist
-backup
+.backup
+.current

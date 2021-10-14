@@ -1,0 +1,34 @@
+# Backend
+
+backend = "glx";
+
+glx-no-stencil = true;
+glx-copy-from-front = false;
+glw-swap-method = "undefined";
+
+# Shadows
+
+shadow = false;
+no-dock-shadow = true;
+
+# Opacity
+
+menu-opacity = 1;
+inactive-opacity = 0.8;
+active-opacity = 1;
+frame-opacity = 1;
+inactive-opacity-override = true;
+
+# Fading
+
+fading = true;
+fade-delta = 3;
+fade-in-step = 0.03;
+fade-out-step = 0.03;
+
+# Blur
+blur-method = "kawase";
+blur-strength = 5;
+blur-background = true;
+blur-background-frame = false;
+blur-background-fixed = true;

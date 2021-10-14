@@ -4,7 +4,7 @@
 
 ! special
 *.foreground:   #d8dee8
-*.background:   #151515
+*.background:   #000000
 *.cursorColor:  #b48ead
 
 ! black
@@ -59,6 +59,8 @@ Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
 
+Xft.dpi: 146
+
 ! ------------------------------------------------------------------------------
 ! URxvt configs
 ! ------------------------------------------------------------------------------
@@ -76,7 +78,7 @@ URxvt*urgentOnBell:		true
 ! appearance
 URxvt*scrollBar:		false
 URxvt*scrollBar_right:	false
-URxvt*internalBorder:	20
+URxvt*internalBorder:	35
 URxvt*externalBorder:	0
 URxvt*geometry:			84x22
 
@@ -86,13 +88,3 @@ URxvt*perl-ext-common:	default,clipboard,url-select,keyboard-select
 URxvt*urlLauncher:		firefox
 URxvt*underlineURLs:	true
 
-! ------------------------------------------------------------------------------
-! Rofi configs
-! ------------------------------------------------------------------------------
-
-rofi.color-enabled: true
-rofi.color-window: #151515, #151515, #151515
-rofi.color-normal: #151515, #d8dee9, #151515, #151515, #bf616a
-rofi.color-active: #151515, #b48ead, #151515, #151515, #93e5cc
-rofi.color-urgent: #151515, #ebcb8b, #151515, #151515, #ebcb8b
-rofi.modi: run,drun,window

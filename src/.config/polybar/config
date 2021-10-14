@@ -1,0 +1,124 @@
+[section/base]
+include-file = ~/.config/polybar/color
+
+[bar/default]
+
+; Dimensions
+
+width = 100%
+height = 30
+offset-y = 0
+offset-x = 0
+
+border-top-size = 15
+border-bottom-size = 10
+border-right-size = 10
+border-left-size = 10
+
+dpi = 146
+
+; Location
+
+bottom = false
+wm-restack = none
+override-redirect = false
+
+; Fonts
+
+font-0 = Roboto:size=13:style=Bold;3
+font-1 = material\-wifi:style=Regular;3
+font-2 = Material Icons:style=Regular;3
+; Font for the wifi disabled is lower
+font-3 = Material Icons:size=14:style=Regular;5
+
+; Colors
+
+background = #00000000
+foreground = ${colors.dominant}
+border-color = #00000000
+
+; Misc
+
+fixed-center = true
+padding-left = 2
+padding-right = 2
+module-margin = 3
+
+modules-left = xwindow
+modules-center = i3
+modules-right = volume wlan battery date time poweroff
+
+tray-position = none
+tray-detached = true
+
+cursor-click = pointer
+
+; Modules
+
+[module/xwindow]
+type = internal/xwindow
+label = %title%
+label-maxlen = 80
+
+[module/poweroff]
+type = custom/text
+content = %{T4}%{T-}
+click-left = i3-msg exit
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+strip-wsnumbers = true
+enable-scroll = false
+
+label-unfocused-foreground = #a0a0a0
+
+[module/time]
+type = internal/date
+interval = 1.0
+date = %{T4} %{T-}%H:%M
+
+[module/date]
+type = internal/date
+date = %{T4} %{T-}%A %e %B
+label = %date%
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+poll-interval = 1
+full-at = 95
+label-discharging = %percentage% %
+label-charging = %percentage% %
+label-full = %percentage% %
+format-discharging = %{T4} %{T-}<label-discharging>
+format-full = %{T4} %{T-}<label-full>
+format-charging = %{T4} %{T-}<label-charging>
+
+[module/volume]
+type = internal/volume
+format-volume = <ramp-volume>  <label-volume>
+format-mutex = 0%
+ramp-volume-0=
+ramp-volume-1=
+ramp-volume-2=
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 5
+format-connected = <ramp-signal>  <label-connected>
+format-disconnected = <label-disconnected>
+label-connected = %essid%
+label-disconnected = %{T4}%{T-}
+ramp-signal-0=
+ramp-signal-1=
+ramp-signal-2=
+ramp-signal-3=
+ramp-signal-4=
+ramp-signal-5=
+
+
+[module/cpu]
+type = internal/cpu
+label = %percentage%

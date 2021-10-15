@@ -7,7 +7,10 @@ $(BACKUP_DIR):
 $(CURRENT_DIR):
 	mkdir -p $(CURRENT_DIR)
 
-install: $(BACKUP_DIR) $(CURRENT_DIR)
+$(CURRENT_CONFIG_DIR):
+	mkdir -p $(CURRENT_DIR)/.config
+
+install: $(BACKUP_DIR) $(CURRENT_DIR) $(CURRENT_CONFIG_DIR)
 	scripts/install.py install
 
 restore: $(BACKUP_DIR) $(CURRENT_DIR)

@@ -53,21 +53,26 @@ if command == "install":
                         print("Error: failed to override "+f)
                         exit(1)
                     # Copy the new file to the .current directory
-                    err = run("mv src/"+f+" .current/"+f)
+                    err = run("cp -r src/"+f+" .current/"+f)
                     if err != 0:
-                        print("Error: to move "+f+" to .current")
+                        print("Error: failed to copy src/"+f+" to .current")
                         exit(1)
         else:
             # Copy the file to the .current directory
-            err = run("mv src/"+f+" .current/"+f)
+            err = run("cp -r src/"+f+" .current/"+f)
             if err != 0:
-                print("Error: to move "+f+" to .current")
+                print("Error: failed to copy src/"+f+" to .current")
                 exit(1)
 
     #
     # Link files to the home directory
     #
-    sources = [f for f in listdir(".current")]
+    if isdir(home(".config")):
+        sources = [f for f in listdir(".current") if f != ".config"]
+        sources += [f for f in listdir(".current/.config")]
+    else:
+        sources = [f for f in listdir(".current")]
+
     for f in sources:
         # Check if a file already exist in the home directory
         if islink(home(f)):

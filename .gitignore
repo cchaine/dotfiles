@@ -1,2 +1,4 @@
 .backup
 .current
+src/.vim/plugged
+src/.vim/autoload

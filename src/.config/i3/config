@@ -4,34 +4,10 @@
 
 font pango:Ubuntu Mono
 
-# panel
-bar {
-    position top
-    font pango:Ubuntu Mono, FontAwesome 12
-    colors {
-        background #151515
-        separator #d8dee8
+gaps inner 10
+gaps outer 0
 
-        # colour of border, background, and text
-        focused_workspace       #e5e9f0 #e5e9f0 #151515
-        active_workspace        #151515 #151515 #d8dee8
-        inactive_workspace      #151515 #151515 #d8dee8
-        urgent_workspacei       #151515 #ebcb8b #151515
-    }
-    status_command i3status
-}
-
-
-# colour of border, background, text, indicator, and child_border
-client.focused              #bf616a #151515 #d8dee8 #bf616a #d8dee8
-client.focused_inactive     #151515 #151515 #d8dee8 #151515 #151515
-client.unfocused            #151515 #151515 #d8dee8 #151515 #151515
-client.urgent               #151515 #151515 #d8dee8 #151515 #151515
-client.placeholder          #151515 #151515 #d8dee8 #151515 #151515
-client.background           #151515 
-
-# window rules, you can find the window class using xprop
-for_window [class=".*"] border pixel 4
+for_window [class="^.*"] border pixel 0
 
 ###################################################
 #                    Startup                      #
@@ -39,17 +15,18 @@ for_window [class=".*"] border pixel 4
 
 # i3lock
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-# NetworkManager
-exec --no-startup-id nm-applet
-
-# run virtualbox tools
-exec --no-startup-id "VBoxClient --vmsvga"
 
 # set keyboard layout
-exec --no-startup-id "setxkbmap fr"
+exec_always --no-startup-id "setxkbmap fr mac"
 
-# run wallpaper script
-exec_always --no-startup-id ~/.config/scripts/update-wallpaper
+# polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# feh
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
+
+# Compton
+exec_always --no-startup-id compton -cb --config ~/.config/compton/config
 
 ###################################################
 #                    Shortcuts                    #
@@ -138,3 +115,14 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 # lock
 bindsym Ctrl+Mod1+l exec i3lock -c 000000
+
+# Sound
+bindsym XF86AudioMute exec "amixer set Master toggle" 
+bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+ unmute"
+bindsym XF86AudioLowerVolume exec "amixer set Master 5%- unmute"
+
+bindsym XF86MonBrightnessUp exec "xbacklight +15"
+bindsym XF86MonBrightnessDown exec "xbacklight -15"
+
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+S sticky enable

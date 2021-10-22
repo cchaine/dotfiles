@@ -59,7 +59,7 @@ txtrst='\[\e[0m\]'    # Text Reset
 
 PROMPT_COMMAND=__prompt_command
 
-nameColor="${bldcyn}"
+nameColor="${bldylw}"
 # Red name for root
 if [ "${UID}" -eq "0" ]; then
   nameColor="${bldred}"

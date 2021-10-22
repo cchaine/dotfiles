@@ -42,7 +42,7 @@ if command == "install":
     for f in sources + config:
         # Check if the file is already in the current folder and is different from this one
         if isfile(".current/"+f) or isdir(".current/"+f):
-            if run("diff src/"+f+".current/"+f) != 0:
+            if run("diff src/"+f+" .current/"+f) != 0:
                 # Ask the user if he wants to discard the changes
                 print(f+" has been modified.")
                 discard = ask("Would you like to discard your changes ? [y/N] ", False)

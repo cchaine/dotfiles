@@ -30,6 +30,8 @@ font-1 = material\-wifi:style=Regular;3
 font-2 = Material Icons:style=Regular;3
 ; Font for the wifi disabled is lower
 font-3 = Material Icons:size=14:style=Regular;5
+; Font for the sound icon to be lower
+font-4 = Material Icons:size=14:style=Regular;6
 
 ; Colors
 
@@ -46,7 +48,7 @@ module-margin = 3
 
 modules-left = xwindow
 modules-center = i3
-modules-right = volume wlan battery date time poweroff
+modules-right = wlan volume battery date time poweroff
 
 tray-position = none
 tray-detached = true
@@ -97,11 +99,12 @@ format-charging = %{T4} %{T-}<label-charging>
 
 [module/volume]
 type = internal/volume
-format-volume = <ramp-volume>  <label-volume>
-format-mutex = 0%
-ramp-volume-0=
-ramp-volume-1=
-ramp-volume-2=
+format-volume = %{T5}<ramp-volume>%{T-}  <label-volume>
+label-volume = %percentage% %
+format-muted = %{T5}%{T-}
+ramp-volume-0= 
+ramp-volume-1= 
+ramp-volume-2= 
 
 [module/wlan]
 type = internal/network

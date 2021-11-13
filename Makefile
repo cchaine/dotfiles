@@ -9,10 +9,10 @@ $(CURRENT_DIR):
 	mkdir -p $(CURRENT_DIR)
 	mkdir -p $(CURRENT_DIR)/.config
 
-install-fonts:
+fonts:
 	scripts/install_fonts.sh
 
-install: $(install-fonts) $(BACKUP_DIR) $(CURRENT_DIR) $(CURRENT_CONFIG_DIR)
+install: $(fonts) $(BACKUP_DIR) $(CURRENT_DIR) $(CURRENT_CONFIG_DIR)
 	scripts/install.py install
 
 check:

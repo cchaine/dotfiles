@@ -48,7 +48,7 @@ module-margin = 3
 
 modules-left = xwindow
 modules-center = i3
-modules-right = wlan volume battery date time poweroff
+modules-right = wlan volume battery time poweroff
 
 tray-position = none
 tray-detached = true

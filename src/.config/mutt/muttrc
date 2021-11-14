@@ -1,0 +1,61 @@
+### INSA ###
+set from = "clement.chaine@insa-toulouse.fr"
+set realname = "Clément Chaine"
+set use_from = yes
+set imap_user = "clement.chaine@insa-toulouse.fr"
+set spoolfile = "imaps://imap.insa-toulouse.fr/INBOX"
+set folder = "imaps://imap.insa-toulouse.fr/INBOX"
+set smtp_url = "smtps://chaine@smtp.insa-toulouse.fr:465"
+
+### CONFIGURATION ###
+
+# Use the source address when answering
+set reverse_name
+
+set signature=~/.config/mutt/signature
+
+# Define here mutt saves data
+set mbox_type = mbox
+set folder = $spoolfile
+set trash = +Trash
+set record = +Sent
+set postponed = ~/.mail/postponed
+set tmpdir = /tmp
+
+# Vim will cut lines where needed
+set editor = "vim -c 'set tw=72' -c 'set wrap' -c ':8'"
+
+# Read progress indicator
+set read_inc = 1
+# Prevent going to the next mail when reaching the end
+set pager_stop = yes
+set smart_wrap = yes
+set markers = yes
+
+ignore *
+unignore From:
+unignore To:
+unignore Subject:
+unignore Date:
+unignore CC:
+hdr_order From: Subject: To: CC: Date:
+
+set charset = "utf-8"
+set index_format = "%Z %D %-25.25L %s"
+set date_format = "%d/%m/%y@%H:%M"
+
+set pager_context = 8
+
+set quote_regexp = "^([ \t]*[|>/])+"
+
+# include the message in the answer
+set include
+
+set edit_headers
+
+set fast_reply
+
+auto_view text/html
+alternative_order text/plain text/html
+
+source ~/.config/mutt/neonwolf.muttrc

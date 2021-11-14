@@ -3,41 +3,41 @@
 ! ------------------------------------------------------------------------------
 
 ! special
-*.foreground:   #d8dee8
-*.background:   #000000
-*.cursorColor:  #b48ead
+*.foreground:   #edecee
+*.background:   #15141B
+*.cursorColor:  #edecee
 
 ! black
-*.color0  : #4b5262
-*.color8  : #434a5a
+*.color0  : #15141B
+*.color8  : #6d6d6d
 
 ! red
-*.color1  : #bf616a
-*.color9  : #b3555e
+*.color1  : #ff6767
+*.color9  : #ffca85
 
 ! green
-*.color2  : #a3be8c
-*.color10 : #93ae7c
+*.color2  : #61FFCA
+*.color10 : #A277FF
 
 ! yellow
-*.color3  : #ebcb8b
-*.color11 : #dbbb7b
+*.color3  : #ffca85
+*.color11 : #ffca85
 
 ! blue
-*.color4  : #81a1c1
-*.color12 : #7191b1
+*.color4  : #A277ff
+*.color12 : #a277FF
 
 ! magenta
-*.color5  : #b48ead
-*.color13 : #a6809f
+*.color5  : #a277FF
+*.color13 : #A277FF
 
 ! cyan
-*.color6  : #89d0bA
-*.color14 : #7dbba8
+*.color6  : #61FFCA
+*.color14 : #61FFCA
 
 ! white
-*.color7  : #e5e9f0
-*.color15 : #d1d5dc
+*.color7  : #edecee
+*.color15 : #edecee
 
 ! ------------------------------------------------------------------------------
 ! Font configuration

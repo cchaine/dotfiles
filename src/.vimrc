@@ -1,3 +1,5 @@
+let &titleold=getcwd()
+
 set nobackup
 set nowb
 set noswapfile
@@ -56,9 +58,15 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+if exists('+termguicolors')
+  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
 so ~/.vim/plugins.vim
-colorscheme jellybeans 
-let g:lightline = { 'colorscheme' : 'jellybeans' }
+colorscheme paramount 
+let g:lightline = { 'colorscheme' : 'dogrun' }
 
 " NERDTree configuration
 let NERDTreeShowHidden = 1
@@ -68,3 +76,4 @@ let NERDTreeDirArrows = 1
 " Clang-format
 autocmd FileType c,cpp,java nnoremap <C-f> :<C-u>ClangFormat<CR>
 autocmd FileTYpe c,cpp,java vnoremap <C-f> :ClangFormat<CR>
+

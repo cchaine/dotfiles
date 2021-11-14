@@ -32,3 +32,6 @@ blur-strength = 5;
 blur-background = true;
 blur-background-frame = false;
 blur-background-fixed = true;
+
+shadow-exclude = [ "n:e:Notification", "class_g = 'Rofi'" ];
+focus-exclude = [ "class_g = 'Rofi'" ];

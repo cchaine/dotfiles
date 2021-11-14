@@ -4,6 +4,8 @@
 
 alias grep='grep --color=auto'
 
+alias mutt='neomutt'
+
 # Enable colors in ls on linux
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   alias ls='ls --color'

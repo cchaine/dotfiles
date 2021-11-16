@@ -10,7 +10,7 @@ alias mutt='neomutt'
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   alias ls='ls --color'
 fi
-alias ll='ls -al'
+alias ll='ls -alhF'
 
 ############################
 # environment variables 

@@ -69,7 +69,7 @@ if command == "install":
     #
     if isdir(home(".config")):
         sources = [f for f in listdir(".current") if f != ".config"]
-        sources += [f for f in listdir(".current/.config")]
+        sources += [".config/" + f for f in listdir(".current/.config")]
     else:
         sources = [f for f in listdir(".current")]
 

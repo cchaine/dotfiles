@@ -124,5 +124,6 @@ bindsym XF86AudioLowerVolume exec "amixer set Master 5%- unmute"
 bindsym XF86MonBrightnessUp exec "xbacklight +15"
 bindsym XF86MonBrightnessDown exec "xbacklight -15"
 
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+space floating toggle
+floating_modifier $mod
 bindsym $mod+Shift+S sticky enable

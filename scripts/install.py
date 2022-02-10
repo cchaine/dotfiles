@@ -95,6 +95,9 @@ if command == "install":
         if err != 0:
             print("Error: failed to link "+f)
             exit(1)
+
+    print("You can link X11 configuration with the following command :")
+    print("\tln -s " + home("/.config/xorg/20-xorg-user.conf") + " /etc/share/X11/xorg.conf.d/20-xorg-user.conf")
 elif command == "restore":
     sources = [f for f in listdir(".backup")]
     for f in sources:

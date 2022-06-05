@@ -28,7 +28,7 @@ set title
 set noshowmode
 set laststatus=2
 
-set background=dark
+set background=light
 
 set showmatch
 
@@ -65,8 +65,8 @@ if exists('+termguicolors')
 endif
 
 so ~/.vim/plugins.vim
-colorscheme paramount 
-let g:lightline = { 'colorscheme' : 'dogrun' }
+colorscheme github
+let g:lightline = { 'colorscheme' : 'github' }
 
 " NERDTree configuration
 let NERDTreeShowHidden = 1

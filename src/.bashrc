@@ -23,7 +23,7 @@ export LC_COLLATE=C
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # load environment variables
-source .env
+source ~/.env
 
 txtblk='\[\e[0;30m\]' # Black - Regular
 txtred='\[\e[0;31m\]' # Red
@@ -61,12 +61,12 @@ txtrst='\[\e[0m\]'    # Text Reset
 
 PROMPT_COMMAND=__prompt_command
 
-nameColor="${bldylw}"
+nameColor="${bldpur}"
 # Red name for root
 if [ "${UID}" -eq "0" ]; then
   nameColor="${bldred}"
 fi
-pathColor="${bldwht}"
+pathColor="${bldblk}"
 
 __prompt_command() {
   local exit="$?"

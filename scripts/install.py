@@ -48,7 +48,7 @@ if command == "install":
                 discard = ask("Would you like to discard your changes ? [y/N] ", False)
                 if discard:
                     # Remove the file in the .current directory
-                    err = run("rm .current/"+f)
+                    err = run("rm -rf .current/"+f)
                     if err != 0:
                         print("Error: failed to override "+f)
                         exit(1)

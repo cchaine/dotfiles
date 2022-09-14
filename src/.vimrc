@@ -71,3 +71,5 @@ let NERDTreeDirArrows = 1
 autocmd FileType c,cpp,java nnoremap <C-f> :<C-u>ClangFormat<CR>
 autocmd FileTYpe c,cpp,java vnoremap <C-f> :ClangFormat<CR>
 
+set foldmethod=indent
+nnoremap za zA

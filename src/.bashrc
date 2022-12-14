@@ -84,13 +84,13 @@ __prompt_command() {
 # git completion 
 ############################
 
-if [ ! -f ~/.git-completion.bash ]; then
-  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+if [ ! -f ~/.config/.git-completion.bash ]; then
+  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.config/.git-completion.bash
   if [ $? -ne 0 ]; then
     echo "Error downloading .git-completion.bash"
   fi
 fi
 
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
+if [ -f ~/.config/.git-completion.bash ]; then
+  . ~/.config/.git-completion.bash
 fi

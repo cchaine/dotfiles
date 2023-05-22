@@ -66,7 +66,7 @@ nameColor="${bldpur}"
 if [ "${UID}" -eq "0" ]; then
   nameColor="${bldred}"
 fi
-pathColor="${bldblk}"
+pathColor="${bldwht}"
 
 __prompt_command() {
   local exit="$?"

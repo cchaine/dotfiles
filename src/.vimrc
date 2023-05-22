@@ -28,7 +28,7 @@ set title
 set noshowmode
 set laststatus=2
 
-set background=light
+set background=dark
 
 set showmatch
 

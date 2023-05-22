@@ -59,8 +59,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 so ~/.vim/plugins.vim
-colorscheme github
-let g:lightline = { 'colorscheme' : 'github' }
+colorscheme moonfly
+let g:lightline = { 'colorscheme' : 'moonfly' }
 
 " NERDTree configuration
 let NERDTreeShowHidden = 1

@@ -73,3 +73,5 @@ autocmd FileTYpe c,cpp,java vnoremap <C-f> :ClangFormat<CR>
 
 set foldmethod=indent
 nnoremap za zA
+
+set colorcolumn=100

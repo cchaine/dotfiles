@@ -5,7 +5,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'nanotech/jellybeans.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'wadackel/vim-dogrun'
-Plug 'bluz71/vim-moonfly-colors', { 'as': 'moonfly' }
 Plug 'vhda/verilog_systemverilog.vim'
+Plug 'jeffkreeftmeijer/vim-dim'
+Plug 'vimpostor/vim-lumen'
 
 call plug#end()

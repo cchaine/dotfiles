@@ -28,8 +28,6 @@ set title
 set noshowmode
 set laststatus=2
 
-set background=dark
-
 set showmatch
 
 " File behaviour "
@@ -59,8 +57,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 so ~/.vim/plugins.vim
-colorscheme moonfly
-let g:lightline = { 'colorscheme' : 'moonfly' }
 
 " NERDTree configuration
 let NERDTreeShowHidden = 1
@@ -75,3 +71,11 @@ set foldmethod=indent
 nnoremap za zA
 
 set colorcolumn=120
+
+colorscheme dim
+
+let g:lightline = {
+      \ 'colorscheme': '16color'
+      \}
+
+let g:lumen_startup_overwrite=0
